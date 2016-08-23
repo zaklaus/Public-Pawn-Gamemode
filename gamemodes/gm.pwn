@@ -8,8 +8,11 @@
 
 #include <Double-O-Files-2>
 
-#include "_core/main/freefunc.pwn"
-#include "_core/main/register.pwn"
+#include "_core/main/freefunc.pawn"
+#include "_core/main/defs.pawn"
+#include "_core/main/vars.pawn"
+
+#include "_core/features/register.pwn"
 
 main()
 {
