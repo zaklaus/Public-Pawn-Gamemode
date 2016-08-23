@@ -1,0 +1,9 @@
+/*
+	Dialog ID definitions
+*/
+enum
+{
+	DIALOG_NONE,
+	DIALOG_REGISTER,
+	DIALOG_LOGIN
+}

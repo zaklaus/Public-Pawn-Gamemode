@@ -4,6 +4,8 @@
 #include <YSI_Coding\y_timers>
 #include <YSI_Coding\y_va>
 #include <YSI_Data\y_iterate>
+#include <YSI_Players\y_text>
+#include <YSI_Players\y_languages>
 #include <YSI_Visual\y_commands>
 
 #include <Double-O-Files-2>
@@ -11,7 +13,9 @@
 #include "_core/main/freefunc.pawn"
 #include "_core/main/defs.pawn"
 #include "_core/main/vars.pawn"
+#include "_core/main/language_setup.pawn"
 
+#include "_core/features/action_event.pwn"
 #include "_core/features/register.pwn"
 
 main()
@@ -42,8 +46,3 @@ public OnPlayerRequestClass(playerid, classid)
 	SetPlayerCameraLookAt(playerid, 1958.3783, 1343.1572, 15.3746);
 	return 1;
 }
-
-
-
-
-

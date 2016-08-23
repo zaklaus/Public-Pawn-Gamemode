@@ -23,7 +23,7 @@ hook OnPlayerConnect( playerid )
 	    USER_ID[ playerid ] = getUserID( playerid );
 	    print("EXISTING USER");
 	}else{
-	    USER_ID[ playerid ] = addUser( playerid );
+	    USER_ID[ playerid ] = addUserID( playerid );
 	    print("NEW USER");
 	}
 	
@@ -38,12 +38,35 @@ hook OnPlayerConnect( playerid )
 
 hook OnPlayerDisconnect( playerid , reason )
 {
-
-
 	return 1;
 }
 
+hook OnDialogResponse( playerid , dialogid , response , listitem , inputtext[] )
+{
+	switch( dialogid )
+	{
+	    case DIALOG_REGISTER:
+	    {
+	        if( response )
+	        {
+	            if( strlen( inputtext ) )
+	            {
+	            
+	            }
+	        }
+	    }
+	    case DIALOG_LOGIN:
+	    {
+	    
+	    }
+	}
+    return 0;
+}
 
+stock ShowRegisterForm( playerid )
+{
+
+}
 
 stock getUserPath( playerid )
 {
@@ -51,7 +74,8 @@ stock getUserPath( playerid )
 	format( path , 32 , USER_ACCOUNT_FILE , USER_ID[ playerid ] );
 	return path;
 }
-stock addUser( playerid )
+
+stock addUserID( playerid )
 {
 	new id = updateUserID();
 	DOF2_SetInt( USER_DB_FILE , GetName( playerid ) , id , "Users" );

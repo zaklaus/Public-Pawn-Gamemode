@@ -1,0 +1,12 @@
+#include <YSI_Coding\y_hooks>
+
+loadtext mode_text[register];
+
+hook OnGameModeInit()
+{
+	Langs_Add("CZ", "Cestina");
+    Langs_Add("EN", "English");
+	return 1;
+}
+
+
