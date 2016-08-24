@@ -1,6 +1,5 @@
-stock GetName( playerid )
-{
-	new name[ MAX_PLAYER_NAME + 1 ];
-	GetPlayerName( playerid , name , MAX_PLAYER_NAME + 1);
-	return name;
-}
+#define GetName(%0) (GetPlayerName((%0), Q@, 24), Q@)
+#define GetIp(%0) (GetPlayerIp((%0), Q@, 16), Q@)
+#define Error(%0,%1) va_SendClientMessage(%0,EC_CRIMSON,"[ Chyba ]{FFFFFF} %s",%1)
+#define pError(%0) va_SendClientMessage(playerid,EC_CRIMSON,"[ Chyba ]{FFFFFF} %s",%0)
+

@@ -5,6 +5,8 @@
 
 new USER_ID[ MAX_PLAYERS ];
 
+loadtext mode_lang[form],mode_lang[auth];
+
 hook OnGameModeInit()
 {
 	if( !fexist( USER_DB_FILE ) )
@@ -29,9 +31,17 @@ hook OnPlayerConnect( playerid )
 	
 	if( !fexist( getUserPath( playerid ) ) )
 	{
-	
+	    inline RegisterResponse(pid, dialogid, response, listitem, string:text0[])
+	    {
+	        
+	    }
+	    Text_PasswordBox( playerid ,  using inline RegisterResponse , $HEADER_REGISTER , $REGISTER_BODY , $BUTTON_NEXT , $BUTTON_CLOSE );
 	}else{
-	
+		inline LoginResponse(pid, dialogid, response, listitem, string:text0[])
+	    {
+
+	    }
+	    Text_PasswordBox( playerid ,  using inline LoginResponse , $HEADER_LOGIN , $LOGIN_BODY , $BUTTON_NEXT , $BUTTON_CLOSE );
 	}
 	return 1;
 }
@@ -51,7 +61,11 @@ hook OnDialogResponse( playerid , dialogid , response , listitem , inputtext[] )
 	        {
 	            if( strlen( inputtext ) )
 	            {
-	            
+	                DOF2_CreateFile( getUserPath( playerid ), inputtext );
+	                DOF2_SetString( getUserPath( playerid ) , "IP" , GetIp(playerid) ,"Main");
+	                DOF2_SetInt( getUserPath( playerid ) , "AutoLogin" , 1 , "Main" );
+	                DOF2_SetInt( getUserPath( playerid ) , "Joined" , gettime() , "Main" );
+	                DOF2_SaveFile();
 	            }
 	        }
 	    }
