@@ -33,13 +33,29 @@ hook OnPlayerConnect( playerid )
 	{
 	    inline RegisterResponse(pid, dialogid, response, listitem, string:text0[])
 	    {
-	        
+			#pragma unused pid,dialogid,listitem
+			if(response)
+			{
+			    if( strlen(text0) > 4 )
+			    {
+			    
+			    
+			    }
+			}
 	    }
 	    Text_PasswordBox( playerid ,  using inline RegisterResponse , $HEADER_REGISTER , $REGISTER_BODY , $BUTTON_NEXT , $BUTTON_CLOSE );
 	}else{
 		inline LoginResponse(pid, dialogid, response, listitem, string:text0[])
 	    {
+  			#pragma unused pid,dialogid,listitem
+			if(response)
+			{
+			    if( strlen(text0) > 4 )
+			    {
 
+
+			    }
+			}
 	    }
 	    Text_PasswordBox( playerid ,  using inline LoginResponse , $HEADER_LOGIN , $LOGIN_BODY , $BUTTON_NEXT , $BUTTON_CLOSE );
 	}
