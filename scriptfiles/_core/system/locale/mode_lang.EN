@@ -1,9 +1,10 @@
+;Zaklaus translation
 [auth]
-HEADER_REGISTER = Registrace
-HEADER_LOGIN = Přihlášení
-REGISTER_BODY = Vítej u nás.\nZaregistruj se zadáním hesla do rámečku níže\n\níže\n\n
-LOGIN_BODY = Vítej zpět.\nPřihlaš se zadáním hesla do rámečku níže\n\n
+HEADER_REGISTER = Registration
+HEADER_LOGIN = Log-In
+REGISTER_BODY = Welcome here.\nRegister yourself by filling in your password in a box below\n\below\n\n
+LOGIN_BODY = Welcome back.\nLog In by filling in your password in a box below\n\n
 [form]
-BUTTON_NEXT = Další
-BUTTON_CLOSE = Zavřít
-BUTTON_SELECT = Zvolit
+BUTTON_NEXT = Next
+BUTTON_CLOSE = Close
+BUTTON_SELECT = Select
