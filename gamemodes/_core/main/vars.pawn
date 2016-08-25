@@ -7,3 +7,19 @@ enum
 	DIALOG_REGISTER,
 	DIALOG_LOGIN
 }
+
+enum PLAYER_INFO
+{
+	MoneyBalance,
+	BankAccount,
+	BankBallance,
+	
+	
+	//HouseOwner
+	//OwnedProperties
+	//OwnedCompanies
+}
+
+
+
+new pInfo[ MAX_PLAYERS ] [ PLAYER_INFO ];

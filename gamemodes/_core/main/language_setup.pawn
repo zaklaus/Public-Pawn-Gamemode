@@ -4,7 +4,6 @@
 
 new Language:Czech,Language:English;
 
-loadtext mode_lang[form],mode_lang[auth];
 
 hook OnGameModeInit()
 {

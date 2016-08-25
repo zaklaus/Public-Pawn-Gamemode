@@ -2,6 +2,7 @@
 
 #define USER_DB_FILE "_core/system/users.ini"
 #define USER_ACCOUNT_FILE "_core/user_accounts/%i.ini"
+#define uP[%0] getUserPath(%0)
 
 new USER_ID[ MAX_PLAYERS ];
 
@@ -23,10 +24,8 @@ hook OnPlayerConnect( playerid )
 	if( DOF2_IsSet( USER_DB_FILE , GetName( playerid ) , "Users" ) )
 	{
 	    USER_ID[ playerid ] = getUserID( playerid );
-	    print("EXISTING USER");
 	}else{
 	    USER_ID[ playerid ] = addUserID( playerid );
-	    print("NEW USER");
 	}
 	
 	if( !fexist( getUserPath( playerid ) ) )
@@ -36,11 +35,19 @@ hook OnPlayerConnect( playerid )
 			#pragma unused pid,dialogid,listitem
 			if(response)
 			{
-			    if( strlen(text0) > 4 )
+			    if( IS_IN_RANGE(strlen(text0),4,16) ) 
 			    {
-			    
-			    
+			        DOF2_CreateFile( getUserPath(playerid),text0);
+			        DOF2_SetString( uP[playerid] , "IP", GetIP(playerid), "Main" );
+			        DOF2_SetInt( uP[playerid] , "Autologin", 1, "Config" );
+			        DOF2_SaveFile();
+			        Text_Send( playerid , $WELCOME_MESSAGE );
+			    }else{
+			        Text_Send( playerid , $PASSWORD_LENGHT , 4,16);
+			        Text_PasswordBox( playerid ,  using inline RegisterResponse , $HEADER_REGISTER , $REGISTER_BODY , $BUTTON_NEXT , $BUTTON_CLOSE );
 			    }
+			}else{
+			
 			}
 	    }
 	    Text_PasswordBox( playerid ,  using inline RegisterResponse , $HEADER_REGISTER , $REGISTER_BODY , $BUTTON_NEXT , $BUTTON_CLOSE );
@@ -50,10 +57,18 @@ hook OnPlayerConnect( playerid )
   			#pragma unused pid,dialogid,listitem
 			if(response)
 			{
-			    if( strlen(text0) > 4 )
+			    if( IS_IN_RANGE(strlen(text0),4,16) )
 			    {
-
-
+					if( DOF2_CheckLogin( uP[playerid],text0) )
+					{
+					    proceedToLogin( playerid );
+					}else{
+					    Text_Send( playerid , $INCORRECT_PASS , 4,16);
+			        	Text_PasswordBox( playerid ,  using inline LoginResponse , $HEADER_LOGIN , $LOGIN_BODY , $BUTTON_NEXT , $BUTTON_CLOSE );
+					}
+			    }else{
+			        Text_Send( playerid , $PASSWORD_LENGHT , 4,16);
+			        Text_PasswordBox( playerid ,  using inline LoginResponse , $HEADER_LOGIN , $LOGIN_BODY , $BUTTON_NEXT , $BUTTON_CLOSE );
 			    }
 			}
 	    }
@@ -124,4 +139,17 @@ stock updateUserID()
 stock getUserID( playerid )
 {
     return DOF2_GetInt( USER_DB_FILE ,  GetName( playerid ) , "Users" );
+}
+
+
+stock proceedToLogin( playerid )
+{
+
+}
+
+
+stock LoadKey( key[] )
+{
+
+
 }

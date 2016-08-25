@@ -3,6 +3,9 @@ HEADER_REGISTER = Registrace
 HEADER_LOGIN = Přihlášení
 REGISTER_BODY = Vítej u nás.\nZaregistruj se zadáním hesla do rámečku níže\n\níže\n\n
 LOGIN_BODY = Vítej zpět.\nPřihlaš se zadáním hesla do rámečku níže\n\n
+WELCOME_MESSAGE = Děkujeme za registraci, užij si hru
+PASSWORD_LENGHT = Omlouváme se ale heslo musí být v rozmezí %d a %d
+INCORRECT_PASS = Zadal jsi nesprávné heslo
 [form]
 BUTTON_NEXT = Další
 BUTTON_CLOSE = Zavřít

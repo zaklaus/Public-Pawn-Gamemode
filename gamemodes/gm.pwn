@@ -13,18 +13,25 @@
 
 #include <Double-O-Files-2>
 
+#undef MAX_PLAYERS
+#define MAX_PLAYERS (50)
+
 #include "_core/main/colors.pawn"
 #include "_core/main/freefunc.pawn"
 #include "_core/main/defs.pawn"
 #include "_core/main/vars.pawn"
 #include "_core/main/language_setup.pawn"
 
+#include "_core/system/anticheat.pawned"
+
 #include "_core/features/action_event.pwn"
 #include "_core/features/register.pwn"
+#include "_core/features/bank.pwn"
 
 
 main()
 {
+
 	print("\n----------------------------------");
 	print(" Blank Gamemode by your name here");
 	print("----------------------------------\n");
