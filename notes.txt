@@ -1,0 +1,26 @@
+[main]
+Password = 123456789
+IP = 127.0.0.1
+
+[stats]
+Registered = 12345679
+LastHere = 123456789
+
+[config]
+Autologin = 1/0
+Locale = 0/1
+
+[info]
+MoneyBalance = 134578
+BankAccount = <0-n>
+BankAccountBalance = 132456789
+
+[licences]
+Licences = A,B,C,D,E,F,G?
+
+
+RED_HOUSE 19522
+ORANGE_HOUSE 19523
+YELLOW_HOUSE 19524
+GREEN_HOUSE 1273
+BLUE_HOUSE 1272
