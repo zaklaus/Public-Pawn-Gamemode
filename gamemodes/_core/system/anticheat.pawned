@@ -1,18 +1,17 @@
 #file "anticheat"
 #include <YSI_Coding\y_hooks>
-#include <YSI_Coding\y_timers>
-#include <YSI_Data\y_iterate>
 
-ptask moneyCheck[1000](playerid)
+
+
+ptask anticheatCheck[750](playerid)
 {
-	if( GetPlayerMoney( playerid ) != pInfo[playerid][MoneyBalance] )
+	/* Money Part */
+	if( GetPlayerMoney( playerid ) != GetMoney( playerid ) )
 	{
-	    ResetPlayerMoney(playerid);
-	    Text_Send( playerid , $FUCK_U_FAGGOT );
-	    GivePlayerMoney(playerid,pInfo[playerid][MoneyBalance]-5000);
-	    
+		new money = GetMoney( playerid );
+		ResetMoney( playerid );
+		GiveMoney( playerid , money );
 	}
-
-	SetPlayerScore(playerid,pInfo[playerid][MoneyBalance]);
-
+	
 }
+

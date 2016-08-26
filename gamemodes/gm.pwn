@@ -1,5 +1,10 @@
 #include <a_samp>
+
 #file "main"
+
+#undef MAX_PLAYERS
+#define MAX_PLAYERS (50)
+
 #include <YSI_Coding\y_hooks>
 #include <YSI_Coding\y_timers>
 #include <YSI_Coding\y_va>
@@ -13,13 +18,10 @@
 
 #include <Double-O-Files-2>
 
-#undef MAX_PLAYERS
-#define MAX_PLAYERS (50)
-
 #include "_core/main/colors.pawn"
-#include "_core/main/freefunc.pawn"
 #include "_core/main/defs.pawn"
 #include "_core/main/vars.pawn"
+#include "_core/main/freefunc.pawn"
 #include "_core/main/language_setup.pawn"
 
 #include "_core/system/anticheat.pawned"

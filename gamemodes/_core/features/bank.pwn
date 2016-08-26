@@ -1,5 +1,5 @@
 #include <YSI_Coding\y_hooks>
-
+#file "Bank System"
 /* Domyslet co jsi stim vlastnì chtìl dìlat
 stock addBankType(
 */
@@ -14,13 +14,13 @@ new BankSkins[] = {147,148,150,187};
 
 enum BANK_INFO
 {
-	Float:bX,Float:bY,Float:bZ
+	Float:bX,Float:bY,Float:bZ,
 	bType
 }
 
 enum ATM_INFO
 {
-	Float:aX,Float:aY,Float:aZ
+	Float:aX,Float:aY,Float:aZ,
 	aType
 }
 
@@ -33,7 +33,7 @@ new Banks[][36] = {
 	{"International Bank of Las Venturas"},
 	{"Banco de la Los Santos"},
 	{"Central bank of San Fiero"}
-}
+};
 
 stock addBank( Float:X, Float:Y, Float:Z , Float:Rotation , type )
 {
@@ -89,20 +89,7 @@ stock getAtmID( playerid )
 
 hook OnPlayerKeyStateChange( playerid , newkeys ,oldkeys )
 {
-	if( newkeys == KEY_WALK )
-	{
-	    if( getBankID( playerid ) != -1 )
-	    {
-	        new bid = getBankID( playerid );
-	        Dialog_ShowCallback(playerid, using inline WeAreInTheFuckingBankBro, DIALOG_STYLE_LIST, "Title", "Message", "Button 1");
-	    }
-	    
-	    if( getAtmID( playerid ) != -1 )
-	    {
-            new aid = getAtmID( playerid );
-	    }
-	
-	}
+
 
 	return 1;
 }

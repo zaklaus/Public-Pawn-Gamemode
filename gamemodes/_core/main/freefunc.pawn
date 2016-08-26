@@ -3,3 +3,28 @@
 #define Error(%0,%1) va_SendClientMessage(%0,EC_CRIMSON,"[ Chyba ]{FFFFFF} %s",%1)
 #define pError(%0) va_SendClientMessage(playerid,EC_CRIMSON,"[ Chyba ]{FFFFFF} %s",%0)
 
+#define GetMoney(%0) pInfo[%0][MoneyBalance]
+
+
+stock GiveMoney( playerid , money )
+{
+    pInfo[playerid][MoneyBalance] += money;
+    GivePlayerMoney( playerid , money );
+    SetPlayerScore(playerid, pInfo[playerid][MoneyBalance] );
+}
+
+stock ResetMoney( playerid )
+{
+    pInfo[playerid][MoneyBalance] = 0;
+    ResetPlayerMoney( playerid );
+    SetPlayerScore(playerid, pInfo[playerid][MoneyBalance] );
+}
+
+stock SetMoney( playerid , money )
+{
+	ResetMoney( playerid );
+	GiveMoney( playerid , money );
+	SetPlayerScore(playerid, pInfo[playerid][MoneyBalance] );
+}
+
+
