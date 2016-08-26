@@ -5,9 +5,10 @@ HEADER_LOGIN = Log-In
 REGISTER_BODY = Welcome here.\nRegister yourself by filling in your password in a box below\n\below\n\n
 LOGIN_BODY = Welcome back.\nLog In by filling in your password in a box below\n\n
 WELCOME_MESSAGE = Thanks for registration, enjoy your stay
-PASSWORD_LENGHT = We are sorry, but password has to be in range %d - %d
+PASSWORD_LENGHT = We are sorry, but password has to be in range %d - %d characters
 INCORRECT_PASS = You've entered incorrect password
 [form]
 BUTTON_NEXT = Next
 BUTTON_CLOSE = Close
 BUTTON_SELECT = Select
+BUTTON_CANCEL = Cancel
