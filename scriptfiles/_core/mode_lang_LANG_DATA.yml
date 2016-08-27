@@ -1,0 +1,7 @@
+<YML>
+	<group name="all">
+		<entry name="WELCOME_MESSAGE" style="client" colour="FFFFFF" />
+        <entry name="PASSWORD_LENGHT" style="client" colour="FFFFFF" />
+        <entry name="INCORRECT_PASS" style="client" colour="FFFFFF" />
+	</group>
+</YML>
