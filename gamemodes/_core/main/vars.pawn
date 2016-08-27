@@ -14,7 +14,7 @@ enum PLAYER_INFO
 	BankAccount,
 	BankBallance,
 	
-	
+	AdminLevel,
 	//HouseOwner
 	//OwnedProperties
 	//OwnedCompanies
@@ -23,3 +23,5 @@ enum PLAYER_INFO
 
 
 new pInfo[ MAX_PLAYERS ] [ PLAYER_INFO ];
+
+#define getAdmin(%0) pInfo[%0][AdminLevel]

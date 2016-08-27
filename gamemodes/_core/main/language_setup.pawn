@@ -2,6 +2,8 @@
 
 #file "f_Language"
 
+#define USER_LOCALE_CONFIG "_core/system/UserLocale.ini"
+
 new Language:Czech,Language:English;
 
 
@@ -10,9 +12,32 @@ hook OnGameModeInit()
 
 	Czech = Langs_Add( "CZ" , "Cestina" );
 	English = Langs_Add( "EN" , "English" );
+	
+	if( !fexist( USER_LOCALE_CONFIG ) )
+	{
+	    DOF2_CreateFile( USER_LOCALE_CONFIG );
+	}
 	return 1;
 }
 
 
 
+stock IsNameHasLocale( playerid )
+{
+	return DOF2_IsSet( USER_LOCALE_CONFIG , GetName(playerid) );
+}
 
+stock setUserLocale( playerid , Language:LocaleID )
+{
+
+	DOF2_SetString( USER_LOCALE_CONFIG , GetName(playerid) , Langs_GetCode(LocaleID) );
+	DOF2_SaveFile();
+	Langs_SetPlayerLanguage(playerid, LocaleID);
+}
+
+stock getUserLocale( playerid )
+{
+	new code[5];
+	DOF2_GetStringEx( USER_LOCALE_CONFIG , GetName(playerid) , code , 5 );
+	Langs_SetPlayerLanguage( playerid , Langs_GetLanguage( code  ) );
+}

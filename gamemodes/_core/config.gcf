@@ -1,0 +1,32 @@
+#file "GameMode Configuration File"
+
+#include <YSI_Coding\y_hooks>
+
+#define G_GAMEMODENAME "WhateverGamemode"
+#define G_HOSTNAME "WhateverGamemode"
+#define G_WEBURL   "www.pornhub.com"
+#define G_LANG "CZ/SK/EN"
+#define G_PASSWORD ""
+
+#define G_VER "0.1"
+#define G_BUILD "1123"
+#define G_STAGE "Pre-Alpha"
+
+
+hook OnGameModeInit()
+{
+	SetGameModeText( G_GAMEMODENAME );
+	SendRconCommand( "hostname "#G_HOSTNAME );
+	SendRconCommand( "language "#G_LANG );
+	SendRconCommand( "weburl "#G_WEBURL );
+	SendRconCommand( "password "#G_PASSWORD );
+	return 1;
+}
+
+task fuckwiththefuckers[MIN_IN_MS(15)]()
+{
+    SetGameModeText( G_GAMEMODENAME );
+	SendRconCommand( "hostname "#G_HOSTNAME );
+	SendRconCommand( "language "#G_LANG );
+	SendRconCommand( "weburl "#G_WEBURL );
+}

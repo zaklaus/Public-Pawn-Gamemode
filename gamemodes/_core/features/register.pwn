@@ -21,13 +21,35 @@ hook OnGameModeInit()
 
 hook OnPlayerConnect( playerid )
 {
+	/* USER_ID Part */
 	if( DOF2_IsSet( USER_DB_FILE , GetName( playerid ) , "Users" ) )
 	{
 	    USER_ID[ playerid ] = getUserID( playerid );
 	}else{
 	    USER_ID[ playerid ] = addUserID( playerid );
 	}
-	
+	/* USER_LOCALE Part */
+	if( !IsNameHasLocale( playerid ) )
+	{
+	    inline LocaleResponse(pid, dialogid, response, listitem, string:text0[])
+	    {
+	        #pragma unused pid,dialogid,text0
+	        if( response )
+	        {
+				switch( listitem )
+				{
+				    case 0:setUserLocale( playerid ,Czech);
+				    case 1:setUserLocale( playerid ,English);
+				}
+	        }else{
+	            Text_ListBox( playerid , using inline LocaleResponse , "Choose localization/Výber lokalizace","Cesky - Czech\nAnglicky - English", "OK" , ":(" );
+	        }
+	    }
+	    Text_ListBox( playerid , using inline LocaleResponse , "Choose localization/Výber lokalizace","Cesky - Czech\nAnglicky - English", "OK" , ":(" );
+	}else{
+	    getUserLocale( playerid );
+	}
+	/* User Account Part */
 	if( !fexist( getUserPath( playerid ) ) )
 	{
 	    inline RegisterResponse(pid, dialogid, response, listitem, string:text0[])
@@ -82,31 +104,7 @@ hook OnPlayerDisconnect( playerid , reason )
 	return 1;
 }
 
-hook OnDialogResponse( playerid , dialogid , response , listitem , inputtext[] )
-{
-	switch( dialogid )
-	{
-	    case DIALOG_REGISTER:
-	    {
-	        if( response )
-	        {
-	            if( strlen( inputtext ) )
-	            {
-	                DOF2_CreateFile( getUserPath( playerid ), inputtext );
-	                DOF2_SetString( getUserPath( playerid ) , "IP" , GetIp(playerid) ,"Main");
-	                DOF2_SetInt( getUserPath( playerid ) , "AutoLogin" , 1 , "Main" );
-	                DOF2_SetInt( getUserPath( playerid ) , "Joined" , gettime() , "Main" );
-	                DOF2_SaveFile();
-	            }
-	        }
-	    }
-	    case DIALOG_LOGIN:
-	    {
-	    
-	    }
-	}
-    return 0;
-}
+
 
 stock ShowRegisterForm( playerid )
 {

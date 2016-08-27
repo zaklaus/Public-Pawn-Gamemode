@@ -24,3 +24,40 @@ ORANGE_HOUSE 19523
 YELLOW_HOUSE 19524
 GREEN_HOUSE 1273
 BLUE_HOUSE 1272
+
+
+
+
+[HouseSystem]
+Saving ( prachy v matraci , zbrane do skrine , auto + upravy )
+Spawnv dome ? 
+Ochrane prostredky proti vykradení( pes , cctv , trezor )
+Adresa
+Schránka ?
+
+[BankSystem]
+Zalozeni uctu
+Poplatky ( cr in action )
+Typy uctu ( proste  ucet , sporící )
+Vklad,Výber,Stav, SMS notifikace o pohybech na uctu
+Frakcní ucet ?
+
+[Povolani]
+Pohovor ?
+Pracovni urad
+
+[Starosta mesta]
+3x LV,LS,SF
+Správa výplat
+Bude se volit!!
+
+[NPC]
+MotoHlídka,Helihlídka,Autohlídka,Desertpatrol,
+Mezimestske a mestske autobusy
+
+[SMS]
+Online/Offline ?
+Režim Letadlo
+Inbox
+Outbox
+SQLite? 10 LAst SMS I/O ?

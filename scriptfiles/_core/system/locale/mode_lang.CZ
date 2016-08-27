@@ -11,3 +11,11 @@ BUTTON_NEXT = Další
 BUTTON_CLOSE = Zavřít
 BUTTON_SELECT = Zvolit
 BUTTON_CANCEL = Zrušit
+[clicked];Not Implemented cause Yless!!
+CLICKED_HEADER = Vyber možnost
+CLICKEDMENU_LEVEL_0 = Poslat SMS
+CLICKEDMENU_LEVEL_1 = Poslat SMS\nGet\nGoto\nKick
+CLICKEDMENU_LEVEL_2 = Poslat SMS\nGet\nGoto\nKick\nBan\nTBan
+CLICKEDMENU_LEVEL_3 = Poslat SMS\nGet\nGoto\nKick\nBan\nTBan
+CLICKEDMENU_LEVEL_4 = Poslat SMS\nGet\nGoto\nKick\nBan\nTBan\nUpravit
+CLICKEDMENU_LEVEL_ERROR = Unexcepted shit whatever

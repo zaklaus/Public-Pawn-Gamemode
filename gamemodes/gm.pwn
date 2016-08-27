@@ -29,7 +29,13 @@
 #include "_core/features/action_event.pwn"
 #include "_core/features/register.pwn"
 #include "_core/features/bank.pwn"
+#include "_core/features/clickplayer.pwn"
 
+//#include "_core/commands/pcmd.pawn"
+//#include "_core/commands/acmd.pawn"
+//#include "_core/commands/vcmd.pawn"
+
+#include "_core/config.gcf"
 
 main()
 {
@@ -43,7 +49,6 @@ main()
 
 public OnGameModeInit()
 {
-	SetGameModeText("Blank Script");
 	AddPlayerClass(0, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
 	return 1;
 }
