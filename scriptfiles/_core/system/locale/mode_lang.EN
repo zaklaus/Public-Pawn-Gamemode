@@ -12,3 +12,12 @@ BUTTON_NEXT = Next
 BUTTON_CLOSE = Close
 BUTTON_SELECT = Select
 BUTTON_CANCEL = Cancel
+
+[clicked];Not Implemented cause Yless!!
+CLICKED_HEADER = Select an option
+CLICKEDMENU_LEVEL_0 = Send SMS
+CLICKEDMENU_LEVEL_1 = Send SMS\nGet\nGoto\nKick
+CLICKEDMENU_LEVEL_2 = Send SMS\nGet\nGoto\nKick\nBan\nTBan
+CLICKEDMENU_LEVEL_3 = Send SMS\nGet\nGoto\nKick\nBan\nTBan
+CLICKEDMENU_LEVEL_4 = Send SMS\nGet\nGoto\nKick\nBan\nTBan\nEdit
+CLICKEDMENU_LEVEL_ERROR = Unexcepted shit whatever
